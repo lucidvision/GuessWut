@@ -3,6 +3,7 @@
   "env": {
     "jest": true
   },
+  "parser": "babel-eslint",
   "rules": {
     "react/jsx-filename-extension": [
       2,
@@ -10,5 +11,8 @@
         "extensions": [".js", ".jsx"]
       }
     ]
+  },
+  "settings": {
+    "import/resolver": "babel-plugin-root-import"
   }
 }
