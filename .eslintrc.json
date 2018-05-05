@@ -5,6 +5,7 @@
   },
   "parser": "babel-eslint",
   "rules": {
+    "no-debugger": "off",
     "react/jsx-filename-extension": [
       2,
       {

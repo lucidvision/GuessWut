@@ -1,13 +1,16 @@
-import { StackNavigator, TabNavigator } from 'react-navigation';
+import { StackNavigator, SwitchNavigator, TabNavigator } from 'react-navigation';
 import {
   AddFriend,
   Friends,
   HostGame,
   HostingGames,
+  Loading,
+  Login,
   PlayGame,
   PlayingGames,
   Profile,
   Settings,
+  Signup,
 } from '~/screens';
 
 const PlayingStack = StackNavigator({
@@ -46,11 +49,31 @@ const UserStack = StackNavigator({
   },
 });
 
-const RootNavigation = TabNavigator({
+const AppTab = TabNavigator({
   Playing: PlayingStack,
   Hosting: HostingStack,
   Friends: FriendStack,
   Me: UserStack,
 });
+
+const AuthStack = StackNavigator({
+  Login: {
+    screen: Login,
+  },
+  Signup: {
+    screen: Signup,
+  },
+});
+
+const RootNavigation = SwitchNavigator(
+  {
+    Loading,
+    App: AppTab,
+    Auth: AuthStack,
+  },
+  {
+    initialRouteName: 'Loading',
+  },
+);
 
 export default RootNavigation;

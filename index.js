@@ -1,4 +1,4 @@
 import { AppRegistry } from 'react-native';
-import RootNavigation from './src/navigation/RootNavigation';
+import App from './src';
 
-AppRegistry.registerComponent('guesswut', () => RootNavigation);
+AppRegistry.registerComponent('guesswut', () => App);
